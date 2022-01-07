@@ -7,26 +7,135 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <ListBox HorizontalAlignment="Left" Height="295" Margin="100,77,0,0" VerticalAlignment="Top" Width="232"/>
+        <ListBox x:Name="lbxMemberList" HorizontalAlignment="Left" Height="295" Margin="100,77,0,0" VerticalAlignment="Top" Width="232" SelectionChanged="lbxMemberList_SelectionChanged"/>
         <Label Content="Member List" HorizontalAlignment="Left" Margin="100,51,0,0" VerticalAlignment="Top"/>
         <Label Content="Member Details" HorizontalAlignment="Left" Margin="424,51,0,0" VerticalAlignment="Top"/>
         <RadioButton x:Name="rbtnAll" Content="All" HorizontalAlignment="Left" Margin="61,385,0,0" VerticalAlignment="Top"/>
-        <RadioButton x:Name="rtbnRegular" Content="Regular" HorizontalAlignment="Left" Margin="151,385,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="rbtnRegular" Content="Regular" HorizontalAlignment="Left" Margin="151,385,0,0" VerticalAlignment="Top"/>
         <RadioButton x:Name="rbtnSenior" Content="Senior" HorizontalAlignment="Left" Margin="247,385,0,0" VerticalAlignment="Top"/>
         <RadioButton x:Name="rbtnJunior" Content="Junior" HorizontalAlignment="Left" Margin="337,385,0,0" VerticalAlignment="Top"/>
         <TextBlock x:Name="tblkMemberName" HorizontalAlignment="Left" Margin="430,77,0,0" TextWrapping="Wrap" Text="&lt;Member Name&gt;" VerticalAlignment="Top" Width="119"/>
-        <TextBlock HorizontalAlignment="Left" Margin="430,98,0,0" TextWrapping="Wrap" Text="Join Date:" VerticalAlignment="Top" Width="44" FontSize="10"/>
-        <TextBlock HorizontalAlignment="Left" Margin="430,114,0,0" TextWrapping="Wrap" Text="Basic Fee:" VerticalAlignment="Top" Width="44" FontSize="10"/>
-        <TextBlock HorizontalAlignment="Left" Margin="430,130,0,0" TextWrapping="Wrap" Text="Payment Schedule:" VerticalAlignment="Top" Width="88" FontSize="10"/>
-        <TextBlock HorizontalAlignment="Left" Margin="430,146,0,0" TextWrapping="Wrap" Text="Renewal Date:" VerticalAlignment="Top" Width="66" FontSize="10"/>
-        <TextBlock HorizontalAlignment="Left" Margin="430,162,0,0" TextWrapping="Wrap" Text="Days to renewal:" VerticalAlignment="Top" Width="75" FontSize="10"/>
-        <TextBlock HorizontalAlignment="Left" Margin="430,178,0,0" TextWrapping="Wrap" Text="Member Type:" VerticalAlignment="Top" Width="66" FontSize="10"/>
-        <TextBlock x:Name="tblkJoinDate" HorizontalAlignment="Left" Margin="479,98,0,0" TextWrapping="Wrap" Text="&lt;date&gt;" VerticalAlignment="Top" Width="44" FontSize="10"/>
-        <TextBlock x:Name="tblkBasicFee" HorizontalAlignment="Left" Margin="479,114,0,0" TextWrapping="Wrap" Text="&lt;fee&gt;" VerticalAlignment="Top" Width="44" FontSize="10"/>
-        <TextBlock x:Name="tblkPaymentSchedule" HorizontalAlignment="Left" Margin="518,130,0,0" TextWrapping="Wrap" Text="&lt;pschedule&gt;" VerticalAlignment="Top" Width="61" FontSize="10"/>
-        <TextBlock x:Name="tblkRenewalDate" HorizontalAlignment="Left" Margin="496,146,0,0" TextWrapping="Wrap" Text="&lt;date&gt;" VerticalAlignment="Top" Width="44" FontSize="10"/>
-        <TextBlock x:Name="tblkDaysToRenewal" HorizontalAlignment="Left" Margin="505,162,0,0" TextWrapping="Wrap" Text="&lt;days&gt;" VerticalAlignment="Top" Width="44" FontSize="10"/>
-        <TextBlock x:Name="tblkMemberType" HorizontalAlignment="Left" Margin="496,178,0,0" TextWrapping="Wrap" Text="&lt;type&gt;" VerticalAlignment="Top" Width="44" FontSize="10"/>
+        <TextBlock HorizontalAlignment="Left" Margin="615,295,0,0" TextWrapping="Wrap" Text="Join Date:" VerticalAlignment="Top" Width="44" FontSize="10" RenderTransformOrigin="0.5,0.5">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.477"/>
+                    <TranslateTransform X="0.335" Y="-0.436"/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="615,311,0,0" TextWrapping="Wrap" Text="Basic Fee:" VerticalAlignment="Top" Width="44" FontSize="10" RenderTransformOrigin="0.5,0.5">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.477"/>
+                    <TranslateTransform X="0.202" Y="-0.436"/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="615,327,0,0" TextWrapping="Wrap" Text="Payment Schedule:" VerticalAlignment="Top" Width="88" FontSize="10" RenderTransformOrigin="0.5,0.5">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.477"/>
+                    <TranslateTransform X="0.068" Y="-0.254"/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="615,343,0,0" TextWrapping="Wrap" Text="Renewal Date:" VerticalAlignment="Top" Width="66" FontSize="10" RenderTransformOrigin="0.5,0.5">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.477"/>
+                    <TranslateTransform X="-0.065" Y="-0.346"/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="615,359,0,0" TextWrapping="Wrap" Text="Days to renewal:" VerticalAlignment="Top" Width="75" FontSize="10" RenderTransformOrigin="0.5,0.5">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.477"/>
+                    <TranslateTransform X="-0.199" Y="-0.309"/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="615,375,0,0" TextWrapping="Wrap" Text="Member Type:" VerticalAlignment="Top" Width="66" FontSize="10" RenderTransformOrigin="0.5,0.5">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.477"/>
+                    <TranslateTransform X="-0.332" Y="-0.347"/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock x:Name="tblkJoinDate" HorizontalAlignment="Left" Margin="664,295,0,0" TextWrapping="Wrap" Text="&lt;date&gt;" VerticalAlignment="Top" Width="44" FontSize="10" RenderTransformOrigin="0.5,0.5">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.477"/>
+                    <TranslateTransform X="0.333" Y="-0.028"/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock x:Name="tblkBasicFee" HorizontalAlignment="Left" Margin="664,311,0,0" TextWrapping="Wrap" Text="&lt;fee&gt;" VerticalAlignment="Top" Width="44" FontSize="10" RenderTransformOrigin="0.5,0.5">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.477"/>
+                    <TranslateTransform X="0.2" Y="-0.028"/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock x:Name="tblkPaymentSchedule" HorizontalAlignment="Left" Margin="703,327,0,0" TextWrapping="Wrap" Text="&lt;pschedule&gt;" VerticalAlignment="Top" Width="61" FontSize="10" RenderTransformOrigin="0.5,0.5">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.477"/>
+                    <TranslateTransform X="0.065" Y="0.367"/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock x:Name="tblkRenewalDate" HorizontalAlignment="Left" Margin="681,343,0,0" TextWrapping="Wrap" Text="&lt;date&gt;" VerticalAlignment="Top" Width="44" FontSize="10" RenderTransformOrigin="0.5,0.5">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.477"/>
+                    <TranslateTransform X="-0.067" Y="0.112"/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock x:Name="tblkDaysToRenewal" HorizontalAlignment="Left" Margin="690,359,0,0" TextWrapping="Wrap" Text="&lt;days&gt;" VerticalAlignment="Top" Width="44" FontSize="10" RenderTransformOrigin="0.5,0.5">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.477"/>
+                    <TranslateTransform X="-0.201" Y="0.186"/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock x:Name="tblkMemberType" HorizontalAlignment="Left" Margin="681,375,0,0" TextWrapping="Wrap" Text="&lt;type&gt;" VerticalAlignment="Top" Width="44" FontSize="10" RenderTransformOrigin="0.5,0.5">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.477"/>
+                    <TranslateTransform X="-0.333" Y="0.111"/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock x:Name="tblkMemInfo" HorizontalAlignment="Left" Margin="430,98,0,0" TextWrapping="Wrap" Text="&lt;info&gt;" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
