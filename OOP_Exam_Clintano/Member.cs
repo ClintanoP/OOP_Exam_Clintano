@@ -19,20 +19,15 @@ namespace OOP_Exam_Clintano
         public decimal Fee { get; set; }
         public PaymentSchedule PaymentType { get; set; }
 
-        private DateTime _RenewalDate;
-        public DateTime RenewalDate {
-            get { return _RenewalDate; }
-            set
+        public DateTime RenewalDate
+        {
+            get
             {
-                _RenewalDate = JoinDate.AddYears(1);
+                return JoinDate.AddYears(1);
             }
         }
-        private int _DaysToRenewal;
         public int DaysToRenewal{
-            get { return _DaysToRenewal; }
-            set {
-                _DaysToRenewal = (_RenewalDate - DateTime.Today).Days;
-            }
+            get { return (RenewalDate - DateTime.Today).Days; }
         }
         #endregion
 
@@ -61,7 +56,7 @@ namespace OOP_Exam_Clintano
         }
 
         public string MemberDetails() {
-            return $"Join Date: {JoinDate}\nBasicFee: {Fee:c}\nPayment Schedule: {PaymentType} - {CalculateFees():c2}\nRenewal Date: {_RenewalDate}\nDays to renewal: {_DaysToRenewal}\nMembership Type: ";
+            return $"Join Date: {JoinDate}\nBasicFee: {Fee:c}\nPayment Schedule: {PaymentType} - {CalculateFees():c2}\nRenewal Date: {RenewalDate}\nDays to renewal: {DaysToRenewal}\nMembership Type: ";
         }
         #endregion
 
