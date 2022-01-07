@@ -25,6 +25,7 @@ namespace OOP_Exam_Clintano
         public MainWindow()
         {
             InitializeComponent();
+            CreateMembers();
         }
 
         public void CreateMembers() {
@@ -49,13 +50,63 @@ namespace OOP_Exam_Clintano
 
         private void lbxMemberList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            int selectedIndex = lbxMemberList.SelectedIndex;
-            tblkMemInfo.Text = members[selectedIndex].ToString();
+            if (lbxMemberList.SelectedItem == null)
+            {
+            }
+            else {
+                int selectedIndex = lbxMemberList.SelectedIndex;
+                tblkMemInfo.Text = members[selectedIndex].MemberDetails();
+            }
         }
 
-        public void Filter() {
-            if (rbtnRegular.IsChecked == true) { 
-                
+        private void rbtn_Checked(object sender, RoutedEventArgs e)
+        {
+            //clears filtered member list
+            FilteredMembers.Clear();
+
+            //clears listbox
+            lbxMemberList.ItemsSource = null;
+
+            //determines what radio button is checked
+            bool all = false, regular = false, senior = false, junior = false;
+
+            if (rbtnAll.IsChecked == true)
+            {
+                all = true;
+                lbxMemberList.ItemsSource = members;
+            }
+
+            if (rbtnRegular.IsChecked == true)
+                regular = true;
+            if (rbtnSenior.IsChecked == true)
+                senior = true;
+            if (rbtnJunior.IsChecked == true)
+                junior = true;
+
+
+            if (regular)
+            {
+                foreach (Member mem in members)
+                {
+                    if (mem is Member)
+                        FilteredMembers.Add(mem);
+                }
+            }
+            else if (senior)
+            {
+                foreach (Member mem in members)
+                {
+                    if (mem is SeniorMember)
+                        FilteredMembers.Add(mem);
+                }
+            }
+            else if (junior)
+            {
+                foreach (Member mem in members)
+                {
+                    if (mem is JuniorMember)
+                        FilteredMembers.Add(mem);
+                }
             }
         }
     }

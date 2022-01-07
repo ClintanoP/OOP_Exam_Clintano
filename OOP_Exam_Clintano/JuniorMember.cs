@@ -22,10 +22,5 @@ namespace OOP_Exam_Clintano
             PaymentType = pType;
             juniorFee = Fee;
         }
-        //methods
-        public override string ToString()
-        {
-            return $"Join Date: {JoinDate}\nBasicFee: {Fee:c}\nPayment Schedule: {PaymentType} - {CalculateFees()}\nRenewal Date: {RenewalDate}\nDays to renewal: {DaysToRenewal}\nMembership Type: Junior";
-        }
     }
 }

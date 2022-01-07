@@ -57,7 +57,12 @@ namespace OOP_Exam_Clintano
         //tostring override for format as requested
         public override string ToString()
         {
-            return $"Join Date: {JoinDate}\nBasicFee: {Fee:c}\nPayment Schedule: {PaymentType} - {CalculateFees()}\nRenewal Date: {_RenewalDate}\nDays to renewal: {_DaysToRenewal}\nMembership Type: Regular";
+            return $"{Name}";
+        }
+
+        public string MemberDetails() {
+            return $"Join Date: {JoinDate}\nBasicFee: {Fee:c}\nPayment Schedule: {PaymentType} - {CalculateFees():c2}\nRenewal Date: {_RenewalDate}\nDays to renewal: {_DaysToRenewal}\nMembership Type: Regular";
+
         }
         #endregion
 
