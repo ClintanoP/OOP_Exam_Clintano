@@ -29,8 +29,7 @@ namespace OOP_Exam_Clintano
         }
 
         public void CreateMembers() {
-            //both creating and adding the members to the list with the dummy information
-
+            //both creating and adding the members to the list with the dummy information      
             members.Add(new JuniorMember() { Name = "Jack Murphy", Fee = 1000, JoinDate = new DateTime(2020, 5, 7), PaymentType = PaymentSchedule.Annual });
             members.Add(new JuniorMember() { Name = "Emily Kelly", Fee = 1000, JoinDate = new DateTime(2021, 1, 10), PaymentType = PaymentSchedule.Biannual });
             members.Add(new JuniorMember() { Name = "Daniel Ryan", Fee = 1000, JoinDate = new DateTime(2020, 11, 30), PaymentType = PaymentSchedule.Monthly });
@@ -53,9 +52,18 @@ namespace OOP_Exam_Clintano
             if (lbxMemberList.SelectedItem == null)
             {
             }
-            else {
+            else if (FilteredMembers.Count != 0) {
                 int selectedIndex = lbxMemberList.SelectedIndex;
-                tblkMemInfo.Text = members[selectedIndex].MemberDetails();
+                tblkMemberName.Text = FilteredMembers[selectedIndex].Name;
+                object o = FilteredMembers[selectedIndex];
+                tblkMemInfo.Text = FilteredMembers[selectedIndex].MemberDetails() + o.GetType();
+            }
+            else
+            {
+                int selectedIndex = lbxMemberList.SelectedIndex;
+                tblkMemberName.Text = members[selectedIndex].Name;
+                object o = members[selectedIndex];
+                tblkMemInfo.Text = members[selectedIndex].MemberDetails() + o.GetType(); //on the docs it is done exactly how I do it, but it shows the path on mine, on theirs it doesn't. 
             }
         }
 
@@ -68,11 +76,10 @@ namespace OOP_Exam_Clintano
             lbxMemberList.ItemsSource = null;
 
             //determines what radio button is checked
-            bool all = false, regular = false, senior = false, junior = false;
+            bool regular = false, senior = false, junior = false;
 
             if (rbtnAll.IsChecked == true)
             {
-                all = true;
                 lbxMemberList.ItemsSource = members;
             }
 
@@ -88,9 +95,10 @@ namespace OOP_Exam_Clintano
             {
                 foreach (Member mem in members)
                 {
-                    if (mem is Member)
+                    if (mem is Member && !(mem is SeniorMember) && !(mem is JuniorMember))
                         FilteredMembers.Add(mem);
                 }
+                lbxMemberList.ItemsSource = FilteredMembers;
             }
             else if (senior)
             {
@@ -99,6 +107,7 @@ namespace OOP_Exam_Clintano
                     if (mem is SeniorMember)
                         FilteredMembers.Add(mem);
                 }
+                lbxMemberList.ItemsSource = FilteredMembers;
             }
             else if (junior)
             {
@@ -107,7 +116,9 @@ namespace OOP_Exam_Clintano
                     if (mem is JuniorMember)
                         FilteredMembers.Add(mem);
                 }
+                lbxMemberList.ItemsSource = FilteredMembers;
             }
+            
         }
     }
 }

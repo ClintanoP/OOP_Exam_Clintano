@@ -61,8 +61,7 @@ namespace OOP_Exam_Clintano
         }
 
         public string MemberDetails() {
-            return $"Join Date: {JoinDate}\nBasicFee: {Fee:c}\nPayment Schedule: {PaymentType} - {CalculateFees():c2}\nRenewal Date: {_RenewalDate}\nDays to renewal: {_DaysToRenewal}\nMembership Type: Regular";
-
+            return $"Join Date: {JoinDate}\nBasicFee: {Fee:c}\nPayment Schedule: {PaymentType} - {CalculateFees():c2}\nRenewal Date: {_RenewalDate}\nDays to renewal: {_DaysToRenewal}\nMembership Type: ";
         }
         #endregion
 

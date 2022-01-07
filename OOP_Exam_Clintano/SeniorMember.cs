@@ -21,5 +21,10 @@ namespace OOP_Exam_Clintano
             PaymentType = pType;
             seniorFee = Fee;
         }
+        //methods
+        public string MemberDetails()
+        {
+            return $"Join Date: {JoinDate}\nBasicFee: {Fee:c}\nPayment Schedule: {PaymentType} - {CalculateFees():c2}\nRenewal Date: {RenewalDate}\nDays to renewal: {DaysToRenewal}\nMembership Type: Senior";
+        }
     }
 }
